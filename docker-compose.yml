@@ -1,12 +1,9 @@
-version: "3.8"
+version: "3.3"
 services:
-  client:
-    stdin_open: true
+  production:
+    container_name: docker-react-app
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - "4000:4000"
-    volumes:
-      - "home/app/node_modules"
-      - "./:/home/app"
+      - '8080:80'
